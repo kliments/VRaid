@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33440821710586252}
   - component: {fileID: 23139075055340906}
   - component: {fileID: 95010028461246732}
+  - component: {fileID: 114644038760514972}
+  - component: {fileID: 64764842643854996}
   m_Layer: 0
   m_Name: DuckWhite
   m_TagString: Untagged
@@ -83,6 +85,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1522729216997060}
   m_Mesh: {fileID: 4300000, guid: 82d0b33fd2ad44744aa557711150e99e, type: 3}
+--- !u!64 &64764842643854996
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1522729216997060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 82d0b33fd2ad44744aa557711150e99e, type: 3}
 --- !u!95 &95010028461246732
 Animator:
   serializedVersion: 3
@@ -100,3 +116,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114644038760514972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1522729216997060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797b3a404899e654da7698430a31de0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
