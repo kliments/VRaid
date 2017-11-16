@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class DucksFlyingManager : MonoBehaviour {
     private float x, y;
+    public bool isShot = false;
     public AudioSource audioSource;
     public AudioClip audioWhenSpawn;
     public AudioClip audioWhenDie;
+    private ParticleSystem blood;
     Vector3 forwardV;
     // Use this for initialization
     void Start()
@@ -15,26 +17,40 @@ public class DucksFlyingManager : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
         UpdateRotation();
         InvokeRepeating("UpdateRotation", 2f, 2f);
-        //Destroys after 10 seconds
-        DuckDestroyer();
-        spawnSound();
+        blood = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
+    //Destroys after 10 seconds
+    //DuckDestroyer();
+    spawnSound();
     }
     
     // Update is called once per frame
     void Update () {
-        transform.position += transform.forward*Time.deltaTime;
+        if(isShot)
+        {
+            blood.Play();
+        }
+        else
+        {
+            transform.position += transform.forward * Time.deltaTime;
+        }
 	}
 
     void UpdateRotation()
     {
-        x = Random.Range(-60f, -20f);
-        y = Random.Range(0f, 360f);
-        transform.rotation = Quaternion.Euler(x, y, 0f);
+        if(!isShot)
+        {
+            x = Random.Range(-60f, -20f);
+            y = Random.Range(0f, 360f);
+            transform.rotation = Quaternion.Euler(x, y, 0f);
+        }
     }
 
     void DuckDestroyer()
     {
-        Destroy(gameObject, 10.0f);
+        if(!isShot)
+        {
+            Destroy(gameObject, 10.0f);
+        }
     }
 
     void spawnSound()

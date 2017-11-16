@@ -10,6 +10,7 @@ public class ShootScript : MonoBehaviour
     private SteamVR_Controller.Device device;
     private SteamVR_TrackedController controller;
 
+    private GameObject currentDuck;
     public GameObject fireAnim1;
     public GameObject fireAnim2;
     private ParticleSystem partSys1;
@@ -56,12 +57,17 @@ public class ShootScript : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward * 100, Color.red, 5.0f);
             if(hit.transform.gameObject.tag == "Ducks")
             {
-                audio = hit.collider.gameObject.GetComponent<DucksFlyingManager>().audioSource;
-                audio.clip = hit.collider.gameObject.GetComponent<DucksFlyingManager>().audioWhenDie;
+                currentDuck = hit.transform.gameObject;
+                currentDuck.GetComponent<DucksFlyingManager>().isShot = true;
+                audio = currentDuck.GetComponent<DucksFlyingManager>().audioSource;
+                audio.clip = currentDuck.GetComponent<DucksFlyingManager>().audioWhenDie;
                 audio.Play();
-                Destroy(hit.collider.gameObject.GetComponent<MeshRenderer>());
-                Destroy(hit.collider.gameObject, 1f);
+
+                currentDuck.AddComponent<Rigidbody>();
+                //Destroy(hit.collider.gameObject.GetComponent<MeshRenderer>());
+                //Destroy(hit.collider.gameObject, 1f);
                 ducksKilled++;
+                Debug.Log("Duck number " + ducksKilled.ToString() + " killed.");
             }
         }
     }
