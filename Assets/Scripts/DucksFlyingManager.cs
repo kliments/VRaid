@@ -18,9 +18,9 @@ public class DucksFlyingManager : MonoBehaviour {
         UpdateRotation();
         InvokeRepeating("UpdateRotation", 2f, 2f);
         blood = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
-    //Destroys after 10 seconds
-    //DuckDestroyer();
-    spawnSound();
+        //Destroys after 10 seconds
+        //DuckDestroyer();
+        spawnSound();
     }
     
     // Update is called once per frame

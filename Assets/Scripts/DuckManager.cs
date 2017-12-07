@@ -7,9 +7,11 @@ public class DuckManager : MonoBehaviour {
     public GameObject duck;             // The duck prefab to be spawned
     public float spawnTime = 3f;        // Duration between each spawn
     public Transform[] spawnPoints;     // An array of spawn points duck can spawn from
+    public int noOfDucksSpawned;
 
     // Use this for initialization
     void Start () {
+        noOfDucksSpawned = 0;
         InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
 
@@ -22,6 +24,7 @@ public class DuckManager : MonoBehaviour {
         // Create an instance of the enemy prefab at the randomly selected spawn point's position and rotation.
         duckInstance = Instantiate(duck, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
         duckInstance.transform.parent = GameObject.Find("DuckManager").transform;
+        ++noOfDucksSpawned;
     }
 
 

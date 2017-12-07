@@ -43,6 +43,16 @@ public class ShootScript : MonoBehaviour
         {
             SteamVR_Controller.Input((int)trackedObj.index).TriggerHapticPulse(3999);
         }
+
+        // Check if required number of ducks killed
+        if (ducksKilled >= 10)
+        {
+            Debug.Log("Level Cleared");
+        }
+        if (currentDuck != null && currentDuck.GetComponentInParent<DuckManager>().noOfDucksSpawned - ducksKilled >= 15)
+        {
+            Debug.Log("Game Over");
+        }
 	}
     
 
