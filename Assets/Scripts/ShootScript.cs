@@ -6,9 +6,6 @@ using UnityEngine;
 public class ShootScript : MonoBehaviour
 {
     public GameObject controllerRight;
-    private SteamVR_TrackedObject trackedObj;
-    private SteamVR_Controller.Device device;
-    private SteamVR_TrackedController controller;
 
     private GameObject currentDuck;
     public GameObject fireAnim1;
@@ -17,33 +14,34 @@ public class ShootScript : MonoBehaviour
     private ParticleSystem partSys2;
     private AudioSource audio;
     public int ducksKilled;
+    public int nrOfBullets;
+    public bool reloaded = true;
     // Use this for initialization
     void Start () {
-        controller = controllerRight.GetComponent<SteamVR_TrackedController>();
-        trackedObj = controllerRight.GetComponent<SteamVR_TrackedObject>();
-        
         ducksKilled = 0;
         partSys1 = fireAnim1.GetComponent<ParticleSystem>();
         partSys2 = fireAnim2.GetComponent<ParticleSystem>();
+
+        nrOfBullets = 5;
     }
 	// Update is called once per frame
 	void Update () {
-		if(Controller.GetHairTriggerDown())
+        if (controllerRight.GetComponent<GetControllerFunctions>().Controller.GetHairTriggerDown())
         {
-            Debug.Log("shoot animation");
-            partSys1.Play();
-            partSys2.Play();
-            Fire();
+            if (nrOfBullets > 0)
+            {
+                Debug.Log("shoot animation");
+                partSys1.Play();
+                partSys2.Play();
+                Fire();
+                controllerVibration();
+                nrOfBullets--;
+            }
+            else
+            {
+                Debug.Log("No more bullets!");
+            }
         }
-        else
-        {
-            partSys1.Stop();
-        }
-        if(Controller.GetHairTrigger())
-        {
-            SteamVR_Controller.Input((int)trackedObj.index).TriggerHapticPulse(3999);
-        }
-
         // Check if required number of ducks killed
         if (ducksKilled >= 10)
         {
@@ -53,9 +51,8 @@ public class ShootScript : MonoBehaviour
         {
             Debug.Log("Game Over");
         }
-	}
+    }
     
-
     // Fire when trigger on controller clicks
     void Fire()
     {
@@ -74,16 +71,26 @@ public class ShootScript : MonoBehaviour
                 audio.Play();
 
                 currentDuck.AddComponent<Rigidbody>();
-                //Destroy(hit.collider.gameObject.GetComponent<MeshRenderer>());
-                //Destroy(hit.collider.gameObject, 1f);
+
                 ducksKilled++;
                 Debug.Log("Duck number " + ducksKilled.ToString() + " killed.");
             }
         }
     }
     
-    private SteamVR_Controller.Device Controller
+    void controllerVibration()
     {
-        get { return SteamVR_Controller.Input((int)trackedObj.index); }
+        if(controllerRight.GetComponent<GetControllerFunctions>().Controller.GetHairTriggerDown())
+        {
+            StartCoroutine(vibration(0.2f, 3999));
+        }
+    }
+    IEnumerator vibration(float length, float strength)
+    {
+        for(float i=0; i<length; i+=Time.deltaTime)
+        {
+            SteamVR_Controller.Input((int)controllerRight.GetComponent<GetControllerFunctions>().trackedObj.index).TriggerHapticPulse(3999);
+            yield return null;
+        }
     }
 }
