@@ -28,6 +28,7 @@ public class DucksFlyingManager : MonoBehaviour {
         if(isShot)
         {
             blood.Play();
+            Destroy(gameObject, 5);
         }
         else
         {

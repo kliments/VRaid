@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ducks
+  - Bullet
   layers:
   - Default
   - TransparentFX

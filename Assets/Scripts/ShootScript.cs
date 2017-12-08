@@ -6,7 +6,7 @@ using UnityEngine;
 public class ShootScript : MonoBehaviour
 {
     public GameObject controllerRight;
-
+    public GameObject reloader;
     private GameObject currentDuck;
     public GameObject fireAnim1;
     public GameObject fireAnim2;
@@ -15,31 +15,38 @@ public class ShootScript : MonoBehaviour
     private AudioSource audio;
     public int ducksKilled;
     public int nrOfBullets;
-    public bool reloaded = true;
+    public bool reloaded;
     // Use this for initialization
     void Start () {
         ducksKilled = 0;
         partSys1 = fireAnim1.GetComponent<ParticleSystem>();
         partSys2 = fireAnim2.GetComponent<ParticleSystem>();
-
+        reloaded = false;
         nrOfBullets = 5;
     }
 	// Update is called once per frame
 	void Update () {
         if (controllerRight.GetComponent<GetControllerFunctions>().Controller.GetHairTriggerDown())
         {
-            if (nrOfBullets > 0)
+            if (nrOfBullets > 0 && reloaded)
             {
-                Debug.Log("shoot animation");
                 partSys1.Play();
                 partSys2.Play();
                 Fire();
                 controllerVibration();
                 nrOfBullets--;
+                reloaded = false;
+                reloader.GetComponent<ReloadScript>().chargedDown = false;
+                reloader.GetComponent<ReloadScript>().chargedUp = false;
             }
-            else
+            else if(nrOfBullets<=0)
             {
                 Debug.Log("No more bullets!");
+                //call function to make click sound
+            }
+            else if(!reloaded)
+            {
+                Debug.Log("Reload please!");
             }
         }
         // Check if required number of ducks killed
