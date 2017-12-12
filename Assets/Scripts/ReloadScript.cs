@@ -55,7 +55,7 @@ public class ReloadScript : MonoBehaviour {
                     GetComponent<AudioSource>().clip = firstReload;
                     GetComponent<AudioSource>().Play();*/
                 }
-                if (gameObject.transform.localPosition.x <= -0.35f && chargedDown)
+                if (gameObject.transform.localPosition.x <= -0.3f && chargedDown)
                 {
                     gameObject.transform.localPosition = chargerPos;
                     chargedUp = true;
