@@ -16,8 +16,14 @@ public class ShootScript : MonoBehaviour
     public int ducksKilled;
     public int nrOfBullets;
     public bool reloaded;
+
+    // Laser
+    //public GameObject laserPrefab;
+    //private GameObject laser;
+
     // Use this for initialization
     void Start () {
+        //laser = Instantiate(laserPrefab);
         ducksKilled = 0;
         partSys1 = fireAnim1.GetComponent<ParticleSystem>();
         partSys2 = fireAnim2.GetComponent<ParticleSystem>();

@@ -25,7 +25,7 @@ public class PutBullets : MonoBehaviour {
     {
         if(col.gameObject.name == "Reloader")
         {
-            col.gameObject.GetComponent<ReloadScript>().shooter.GetComponent<ShootScript>().nrOfBullets+=5;
+            col.gameObject.GetComponent<ReloadScript>().shooter.GetComponent<ShootScript>().nrOfBullets+=1;
             clone = Instantiate(gameObject, parent);
             clone.transform.position = position;
             clone.transform.localScale = scale;
