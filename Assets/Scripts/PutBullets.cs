@@ -8,6 +8,8 @@ public class PutBullets : MonoBehaviour {
     private Vector3 scale;
     private Quaternion rotation;
     private GameObject clone;
+    public AudioSource audioSource;
+    public AudioClip reloadClip;
 	// Use this for initialization
 	void Start () {
         position = transform.position;
@@ -25,6 +27,8 @@ public class PutBullets : MonoBehaviour {
     {
         if(col.gameObject.name == "Reloader")
         {
+            audioSource.clip = reloadClip;
+            audioSource.Play();
             col.gameObject.GetComponent<ReloadScript>().shooter.GetComponent<ShootScript>().nrOfBullets+=1;
             clone = Instantiate(gameObject, parent);
             clone.transform.position = position;

@@ -11,6 +11,7 @@ public class ReloadScript : MonoBehaviour {
     private Vector3 chargerPos;
     public AudioClip firstReload;
     public AudioClip secondReload;
+    public AudioSource audioSource;
 	// Use this for initialization
 	void Start () {
         chargedDown = false;
@@ -50,19 +51,19 @@ public class ReloadScript : MonoBehaviour {
                 {
                     gameObject.transform.localPosition = new Vector3(-0.26f, 0.0306f, 0);
                     chargedDown = true;
-                    //call script to make chk chk sound
-                    /*
-                    GetComponent<AudioSource>().clip = firstReload;
-                    GetComponent<AudioSource>().Play();*/
+                    if (!audioSource.isPlaying)
+                    {
+                        audioSource.clip = firstReload;
+                        audioSource.Play();
+                    }
+                    
                 }
                 if (gameObject.transform.localPosition.x <= -0.3f && chargedDown)
                 {
                     gameObject.transform.localPosition = chargerPos;
                     chargedUp = true;
-                    //call script to make chk chk sound
-                    /*
-                    GetComponent<AudioSource>().clip = secondReload;
-                    GetComponent<AudioSource>().Play();*/
+                    audioSource.clip = secondReload;
+                    audioSource.Play();
                 }
             }
         }

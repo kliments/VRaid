@@ -13,6 +13,9 @@ public class ShootScript : MonoBehaviour
     private ParticleSystem partSys1;
     private ParticleSystem partSys2;
     private AudioSource audio;
+    public AudioSource audioSource;
+    public AudioClip fireClip;
+    public AudioClip emptyGunClip;
     public int ducksKilled;
     public int nrOfBullets;
     public bool reloaded;
@@ -23,7 +26,6 @@ public class ShootScript : MonoBehaviour
 
     // Use this for initialization
     void Start () {
-        //laser = Instantiate(laserPrefab);
         ducksKilled = 0;
         partSys1 = fireAnim1.GetComponent<ParticleSystem>();
         partSys2 = fireAnim2.GetComponent<ParticleSystem>();
@@ -48,7 +50,8 @@ public class ShootScript : MonoBehaviour
             else if(nrOfBullets<=0)
             {
                 Debug.Log("No more bullets!");
-                //call function to make click sound
+                audioSource.clip = emptyGunClip;
+                audioSource.Play();
             }
             else if(!reloaded)
             {
@@ -70,6 +73,8 @@ public class ShootScript : MonoBehaviour
     void Fire()
     {
         Debug.Log("Fired");
+        audioSource.clip = fireClip;
+        audioSource.Play();
         RaycastHit hit = new RaycastHit();
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, 100.0f))
