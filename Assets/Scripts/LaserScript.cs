@@ -15,7 +15,7 @@ public class LaserScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        lr.SetPosition(0, transform.position);
+        lr.SetPosition(0, transform.position + transform.forward*0.6f);
         lr.SetPosition(1, transform.forward * 100 + transform.position);
 
         crossHair.SetActive(false);
