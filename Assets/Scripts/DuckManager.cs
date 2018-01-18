@@ -9,6 +9,7 @@ public class DuckManager : MonoBehaviour {
     public Transform[] spawnPoints;     // An array of spawn points duck can spawn from
     private GameObject duckInstance;
     public int noOfDucksSpawned;
+    public int noOfDucksEscaped;
 
     // Use this for initialization
     void Start () {
@@ -27,8 +28,11 @@ public class DuckManager : MonoBehaviour {
         {
             duckInstance = Instantiate(duck, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
             duckInstance.transform.parent = GameObject.Find("DuckManager").transform;
+            ++noOfDucksSpawned;
+            Debug.Log("No. of ducks spawned: " + noOfDucksSpawned);
         }
-        ++noOfDucksSpawned;
+        
+        
     }
 
 

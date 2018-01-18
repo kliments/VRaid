@@ -9,17 +9,18 @@ public class DucksFlyingManager : MonoBehaviour {
     public AudioClip audioWhenSpawn;
     public AudioClip audioWhenDie;
     private ParticleSystem blood;
-    Vector3 forwardV;
+    private Vector3 forwardV;
+
     // Use this for initialization
     void Start()
     {
-
         audioSource = GetComponent<AudioSource>();
         UpdateRotation();
         InvokeRepeating("UpdateRotation", 2f, 2f);
         blood = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
-        //Destroys after 10 seconds
-        //DuckDestroyer();
+
+        //Call Destroy function after 10 seconds
+        Invoke("DuckDestroyer", 10);
         spawnSound();
     }
     
@@ -50,7 +51,10 @@ public class DucksFlyingManager : MonoBehaviour {
     {
         if(!isShot)
         {
-            Destroy(gameObject, 10.0f);
+
+            ++GetComponentInParent<DuckManager>().noOfDucksEscaped;
+            Debug.Log("No. of ducks escaped:" + GetComponentInParent<DuckManager>().noOfDucksEscaped);
+            Destroy(gameObject);
         }
     }
 

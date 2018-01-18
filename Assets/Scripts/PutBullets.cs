@@ -29,7 +29,7 @@ public class PutBullets : MonoBehaviour {
         {
             audioSource.clip = reloadClip;
             audioSource.Play();
-            col.gameObject.GetComponent<ReloadScript>().shooter.GetComponent<ShootScript>().nrOfBullets+=1;
+            col.gameObject.GetComponent<ReloadScript>().shooter.GetComponent<ShootScript>().noOfBullets+=1;
             clone = Instantiate(gameObject, parent);
             clone.transform.position = position;
             clone.transform.localScale = scale;

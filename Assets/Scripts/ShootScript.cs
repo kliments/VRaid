@@ -16,38 +16,34 @@ public class ShootScript : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip fireClip;
     public AudioClip emptyGunClip;
-    public int ducksKilled;
-    public int nrOfBullets;
+    public int noOfDucksKilled;
+    public int noOfBullets;
     public bool reloaded;
-
-    // Laser
-    //public GameObject laserPrefab;
-    //private GameObject laser;
 
     // Use this for initialization
     void Start () {
-        ducksKilled = 0;
+        noOfDucksKilled = 0;
         partSys1 = fireAnim1.GetComponent<ParticleSystem>();
         partSys2 = fireAnim2.GetComponent<ParticleSystem>();
         reloaded = false;
-        nrOfBullets = 5;
+        noOfBullets = 5;
     }
 	// Update is called once per frame
 	void Update () {
         if (controllerRight.GetComponent<GetControllerFunctions>().Controller.GetHairTriggerDown())
         {
-            if (nrOfBullets > 0 && reloaded)
+            if (noOfBullets > 0 && reloaded)
             {
                 partSys1.Play();
                 partSys2.Play();
                 Fire();
                 controllerVibration();
-                nrOfBullets--;
+                noOfBullets--;
                 reloaded = false;
                 reloader.GetComponent<ReloadScript>().chargedDown = false;
                 reloader.GetComponent<ReloadScript>().chargedUp = false;
             }
-            else if(nrOfBullets<=0)
+            else if(noOfBullets<=0)
             {
                 Debug.Log("No more bullets!");
                 audioSource.clip = emptyGunClip;
@@ -59,11 +55,11 @@ public class ShootScript : MonoBehaviour
             }
         }
         // Check if required number of ducks killed
-        if (ducksKilled >= 10)
+        if (noOfDucksKilled >= 10)
         {
             Debug.Log("Level Cleared");
         }
-        if (currentDuck != null && currentDuck.GetComponentInParent<DuckManager>().noOfDucksSpawned - ducksKilled >= 15)
+        if (currentDuck != null && currentDuck.GetComponentInParent<DuckManager>().noOfDucksEscaped == 5)
         {
             Debug.Log("Game Over");
         }
@@ -90,8 +86,8 @@ public class ShootScript : MonoBehaviour
 
                 currentDuck.AddComponent<Rigidbody>();
 
-                ducksKilled++;
-                Debug.Log("Duck number " + ducksKilled.ToString() + " killed.");
+                noOfDucksKilled++;
+                Debug.Log("No. of ducks killed: " + noOfDucksKilled);
             }
         }
     }
