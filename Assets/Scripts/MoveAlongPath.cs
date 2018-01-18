@@ -6,7 +6,7 @@ public class MoveAlongPath : MonoBehaviour {
 
     private Vector3 start, con1, con2, end;
     private float bezierTime, timeToEnd;
-    private Vector3 startPos, endPos;
+    private Vector3 startPos, endPos, prevLoc, nextLoc, targetDir, newDir;
 	// Use this for initialization
 	void Start () {
         timeToEnd = 10f;
@@ -21,14 +21,19 @@ public class MoveAlongPath : MonoBehaviour {
         {
             bezierTime = 0;
         }
-        transform.position = Bezier3(start,con1, con2, end, bezierTime);
+        prevLoc = transform.position;
+        nextLoc = Bezier3(start, con1, con2, end, bezierTime);
+        targetDir = nextLoc - prevLoc;
+        newDir = Vector3.RotateTowards(transform.forward, targetDir, Time.deltaTime, 0.0F);
+        transform.rotation = Quaternion.LookRotation(newDir);
+        transform.position = nextLoc;
     }
 
     void genPoints()
     {
-        con1 = new Vector3(Random.Range(-20f,20f), Random.Range(3f, 20f),Random.Range(-30f, 30f));
-        con2 = new Vector3(Random.Range(-20f, 20f), Random.Range(3f, 20f), Random.Range(-30f, 30f));
-        end = new Vector3(Random.Range(-20f, 20f), Random.Range(3f, 20f), Random.Range(-30f, 30f));
+        con1 = new Vector3(Random.Range(-20f,20f), Random.Range(3f, 20f),Random.Range(-20f, 20f));
+        con2 = new Vector3(Random.Range(-20f, 20f), Random.Range(3f, 20f), Random.Range(-20f, 20f));
+        end = new Vector3(Random.Range(-20f, 20f), Random.Range(3f, 20f), Random.Range(-20f, 20f));
     }
 
     Vector3 Bezier3(Vector3 s, Vector3 st, Vector3 et, Vector3 e, float t)
