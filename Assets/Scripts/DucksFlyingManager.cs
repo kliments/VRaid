@@ -11,12 +11,15 @@ public class DucksFlyingManager : MonoBehaviour {
     private ParticleSystem blood;
     private Vector3 forwardV;
 
+    private Vector3 dest;
+    private float dX,dY, dZ,t, curLerpTime, lerpTime;
     // Use this for initialization
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        UpdateRotation();
-        InvokeRepeating("UpdateRotation", 2f, 2f);
+        //UpdateRotation();
+        //InvokeRepeating("UpdateRotation", 2f, 2f);
+
         blood = transform.GetChild(0).gameObject.GetComponent<ParticleSystem>();
 
         //Call Destroy function after 10 seconds
@@ -33,10 +36,11 @@ public class DucksFlyingManager : MonoBehaviour {
         }
         else
         {
-            transform.position += transform.forward * Time.deltaTime;
+            //transform.position += transform.forward * Time.deltaTime;
         }
 	}
 
+    
     void UpdateRotation()
     {
         if(!isShot)
@@ -51,7 +55,7 @@ public class DucksFlyingManager : MonoBehaviour {
     {
         if(!isShot)
         {
-
+            //++gameObject.transform.parent.transform.parent.gameObject.GetComponent<DuckManager>().noOfDucksEscaped;
             ++GetComponentInParent<DuckManager>().noOfDucksEscaped;
             Debug.Log("No. of ducks escaped:" + GetComponentInParent<DuckManager>().noOfDucksEscaped);
             Destroy(gameObject);

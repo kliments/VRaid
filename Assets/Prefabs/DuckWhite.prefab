@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 95328121032502340}
   - component: {fileID: 114829011531710490}
   - component: {fileID: 82084175623271828}
+  - component: {fileID: 114947176566154432}
   m_Layer: 0
   m_Name: DuckWhite
   m_TagString: Ducks
@@ -241,6 +242,17 @@ MonoBehaviour:
   audioSource: {fileID: 82084175623271828}
   audioWhenSpawn: {fileID: 8300000, guid: 45f75f01f9669174595db1d189bec3ae, type: 3}
   audioWhenDie: {fileID: 8300000, guid: 0b9f89be14a42ab4a853a0f7f32f4103, type: 3}
+--- !u!114 &114947176566154432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038457529763866}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f852dcc1592e1f4089043d853e8cfdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198624419882873374
 ParticleSystem:
   m_ObjectHideFlags: 1

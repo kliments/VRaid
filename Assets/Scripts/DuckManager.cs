@@ -27,7 +27,7 @@ public class DuckManager : MonoBehaviour {
         if(duckInstance == null)
         {
             duckInstance = Instantiate(duck, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
-            duckInstance.transform.parent = GameObject.Find("DuckManager").transform;
+            duckInstance.transform.parent = transform;
             ++noOfDucksSpawned;
             Debug.Log("No. of ducks spawned: " + noOfDucksSpawned);
         }
