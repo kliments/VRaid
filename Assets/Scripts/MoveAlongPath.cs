@@ -16,17 +16,20 @@ public class MoveAlongPath : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        bezierTime = bezierTime + Time.deltaTime/timeToEnd;
-        if(bezierTime > 1f)
+        if(!gameObject.GetComponent<DucksFlyingManager>().isShot)
         {
-            bezierTime = 0;
+            bezierTime = bezierTime + Time.deltaTime / timeToEnd;
+            if (bezierTime > 1f)
+            {
+                bezierTime = 0;
+            }
+            prevLoc = transform.position;
+            nextLoc = Bezier3(start, con1, con2, end, bezierTime);
+            targetDir = nextLoc - prevLoc;
+            newDir = Vector3.RotateTowards(transform.forward, targetDir, Time.deltaTime, 0.0F);
+            transform.rotation = Quaternion.LookRotation(newDir);
+            transform.position = nextLoc;
         }
-        prevLoc = transform.position;
-        nextLoc = Bezier3(start, con1, con2, end, bezierTime);
-        targetDir = nextLoc - prevLoc;
-        newDir = Vector3.RotateTowards(transform.forward, targetDir, Time.deltaTime, 0.0F);
-        transform.rotation = Quaternion.LookRotation(newDir);
-        transform.position = nextLoc;
     }
 
     void genPoints()
