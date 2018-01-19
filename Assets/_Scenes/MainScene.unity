@@ -1201,7 +1201,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4134460029743248, guid: 6840c06fa9e9fa844b7906ce6b691e1d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.259
+      value: -1.346
       objectReference: {fileID: 0}
     - target: {fileID: 4134460029743248, guid: 6840c06fa9e9fa844b7906ce6b691e1d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1209,19 +1209,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4134460029743248, guid: 6840c06fa9e9fa844b7906ce6b691e1d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.412
+      value: 0.987
       objectReference: {fileID: 0}
     - target: {fileID: 4134460029743248, guid: 6840c06fa9e9fa844b7906ce6b691e1d, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4134460029743248, guid: 6840c06fa9e9fa844b7906ce6b691e1d, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4134460029743248, guid: 6840c06fa9e9fa844b7906ce6b691e1d, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4134460029743248, guid: 6840c06fa9e9fa844b7906ce6b691e1d, type: 2}
       propertyPath: m_LocalRotation.w
@@ -1331,6 +1331,26 @@ Prefab:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1474127878}
+    - target: {fileID: 4134460029743248, guid: 6840c06fa9e9fa844b7906ce6b691e1d, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134460029743248, guid: 6840c06fa9e9fa844b7906ce6b691e1d, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134460029743248, guid: 6840c06fa9e9fa844b7906ce6b691e1d, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262760343621398, guid: 6840c06fa9e9fa844b7906ce6b691e1d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.896
+      objectReference: {fileID: 0}
+    - target: {fileID: 4262760343621398, guid: 6840c06fa9e9fa844b7906ce6b691e1d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 8.809
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6840c06fa9e9fa844b7906ce6b691e1d, type: 2}
   m_IsPrefabParent: 0
