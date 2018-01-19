@@ -10,6 +10,7 @@ public class DuckManager : MonoBehaviour {
     private GameObject duckInstance;
     public int noOfDucksSpawned;
     public int noOfDucksEscaped;
+    public int noOfDucksKilled;
 
     // Use this for initialization
     void Start () {

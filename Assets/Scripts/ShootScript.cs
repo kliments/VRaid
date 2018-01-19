@@ -16,13 +16,12 @@ public class ShootScript : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip fireClip;
     public AudioClip emptyGunClip;
-    public int noOfDucksKilled;
     public int noOfBullets;
     public bool reloaded;
+    public GameObject duckManager;
 
     // Use this for initialization
     void Start () {
-        noOfDucksKilled = 0;
         partSys1 = fireAnim1.GetComponent<ParticleSystem>();
         partSys2 = fireAnim2.GetComponent<ParticleSystem>();
         reloaded = false;
@@ -54,15 +53,6 @@ public class ShootScript : MonoBehaviour
                 Debug.Log("Reload please!");
             }
         }
-        // Check if required number of ducks killed
-        if (noOfDucksKilled >= 10)
-        {
-            Debug.Log("Level Cleared");
-        }
-        if (currentDuck != null && currentDuck.GetComponentInParent<DuckManager>().noOfDucksEscaped == 5)
-        {
-            Debug.Log("Game Over");
-        }
     }
     
     // Fire when trigger on controller clicks
@@ -85,9 +75,8 @@ public class ShootScript : MonoBehaviour
                 audio.Play();
 
                 currentDuck.AddComponent<Rigidbody>();
-
-                noOfDucksKilled++;
-                Debug.Log("No. of ducks killed: " + noOfDucksKilled);
+                ++duckManager.GetComponent<DuckManager>().noOfDucksKilled;
+                Debug.Log("Ducks killed = " + duckManager.GetComponent<DuckManager>().noOfDucksKilled);
             }
         }
     }

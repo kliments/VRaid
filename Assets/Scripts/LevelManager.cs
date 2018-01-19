@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour {
 
     public bool switchScenes;
     private Scene scene;
+    public GameObject duckManager;
     // Use this for initialization
     void Start () {
         scene = SceneManager.GetActiveScene();
@@ -15,10 +16,14 @@ public class LevelManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(scene.name == "MainScene" && switchScenes)
+		if(scene.name == "MainScene" && duckManager.GetComponent<DuckManager>().noOfDucksKilled == 1)
         {
-            switchScenes = false;
-            SceneManager.LoadScene("MainScene2", LoadSceneMode.Single);
+            SceneManager.LoadScene("MainScene2");
+        }
+        
+        if(duckManager.GetComponent<DuckManager>().noOfDucksEscaped == 5)
+        {
+            Debug.Log("GAME OVER MOTHERFUCKER!");
         }
 	}
 }
