@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114829011531710490}
   - component: {fileID: 82084175623271828}
   - component: {fileID: 114947176566154432}
+  - component: {fileID: 114318071310452574}
   m_Layer: 0
   m_Name: DuckWhite
   m_TagString: Ducks
@@ -227,6 +228,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114318071310452574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038457529763866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3b7968b6e99e84e83a16952b0f54a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1103069295406292, guid: b61795ec9f758134994ea7504adacafb, type: 2}
+  main: {fileID: 0}
 --- !u!114 &114829011531710490
 MonoBehaviour:
   m_ObjectHideFlags: 1

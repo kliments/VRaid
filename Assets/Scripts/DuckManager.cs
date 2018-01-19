@@ -11,6 +11,7 @@ public class DuckManager : MonoBehaviour {
     public int noOfDucksSpawned;
     public int noOfDucksEscaped;
     public int noOfDucksKilled;
+    public GameObject bucket;
 
     // Use this for initialization
     void Start () {
@@ -31,6 +32,7 @@ public class DuckManager : MonoBehaviour {
             duckInstance.transform.parent = transform;
             ++noOfDucksSpawned;
             Debug.Log("No. of ducks spawned: " + noOfDucksSpawned);
+            bucket.GetComponent<DeadDuckBucket>().tempDuck = true;
         }
         
         

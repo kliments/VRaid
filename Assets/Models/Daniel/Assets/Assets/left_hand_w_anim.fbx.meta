@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 46bcb09c5caba80408b9c9a2db4a50ba
-timeCreated: 1516370211
+guid: 00f83d5e47f0e814893b41febfc85b3e
+timeCreated: 1516370235
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -79,17 +79,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ShottyMUV_Material_002
-    second: {fileID: 2100000, guid: 4340f763327668443abd68b91e8be6e6, type: 2}
+    second: {fileID: 2100000, guid: f5896e60787c4b04cb6b8246941ba6bf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert1
-    second: {fileID: 2100000, guid: 2854d0ed6ffc99a4b8052ffafcc9c87b, type: 2}
+    second: {fileID: 2100000, guid: d67ccb8a12413d84c80e30e6a48ffd3d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert2
-    second: {fileID: 2100000, guid: 41536a056d23e6a4b985459677fe6499, type: 2}
+    second: {fileID: 2100000, guid: 07e4a5fe1bda2a44983c747bfec191a1, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
