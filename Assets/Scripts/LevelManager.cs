@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour {
     public bool switchScenes;
     private Scene scene;
     public GameObject duckManager;
-    public GameObject plane;
+    public GameObject cameraEye;
     // Use this for initialization
     void Start () {
         scene = SceneManager.GetActiveScene();
@@ -17,15 +17,16 @@ public class LevelManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(scene.name == "MainScene" && duckManager.GetComponent<DuckManager>().noOfDucksKilled == 5)
+		if(scene.name == "MainScene" && duckManager.GetComponent<DuckManager>().noOfDucksKilled == 1)
         {
-           plane.GetComponent<FadeInAndOut>().fIn = true;
+           cameraEye.GetComponent<FadeInAndOut>().fIn = true;
             Invoke("Switch2", 5f);
         }
         
-        else if(scene.name == "MainScene2" && duckManager.GetComponent<DuckManager>().noOfDucksKilled == 5)
+        if(scene.name == "MainScene2" && duckManager.GetComponent<DuckManager>().noOfDucksKilled == 1)
         {
-            plane.GetComponent<FadeInAndOut>().fIn = true;
+            cameraEye.GetComponent<FadeInAndOut>().fIn = true;
+            Debug.Log("change scene");
             Invoke("Switch3", 5f);
         }
         if(duckManager.GetComponent<DuckManager>().noOfDucksEscaped == 3)

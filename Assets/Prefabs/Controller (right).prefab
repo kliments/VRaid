@@ -246,7 +246,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6294f34f153acb4fbe7c962148a5fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireAnim: {fileID: 1915712107488144}
+  controllerRight: {fileID: 0}
+  reloader: {fileID: 0}
+  fireAnim1: {fileID: 0}
+  fireAnim2: {fileID: 0}
+  audioSource: {fileID: 0}
+  fireClip: {fileID: 0}
+  emptyGunClip: {fileID: 0}
+  noOfBullets: 0
+  reloaded: 0
+  duckManager: {fileID: 0}
+  bulletsUI: {fileID: 0}
 --- !u!198 &198038821796418078
 ParticleSystem:
   m_ObjectHideFlags: 1
