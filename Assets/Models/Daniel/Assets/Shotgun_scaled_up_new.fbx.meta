@@ -1,33 +1,48 @@
 fileFormatVersion: 2
-guid: e221776a22baf48449837ab26158feca
-timeCreated: 1516370723
+guid: 63eea3a88f944ca409db7a27bff43ed7
+timeCreated: 1516415931
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: duck_body
-    100004: duck_eye
-    400000: //RootNode
-    400002: duck_body
-    400004: duck_eye
-    2300000: duck_body
-    2300002: duck_eye
-    3300000: duck_body
-    3300002: duck_eye
-    4300000: duck_body
-    4300002: duck_eye
+    100000: shotggun:Handle
+    100002: shotggun:R_Hand
+    100004: shotggun:Reloader
+    100006: shotggun:Shotgun_body
+    100008: shotggun:trigger
+    100010: //RootNode
+    400000: shotggun:Handle
+    400002: shotggun:R_Hand
+    400004: shotggun:Reloader
+    400006: shotggun:Shotgun_body
+    400008: shotggun:trigger
+    400010: //RootNode
+    2300000: shotggun:Handle
+    2300002: shotggun:R_Hand
+    2300004: shotggun:Reloader
+    2300006: shotggun:Shotgun_body
+    2300008: shotggun:trigger
+    3300000: shotggun:Handle
+    3300002: shotggun:R_Hand
+    3300004: shotggun:Reloader
+    3300006: shotggun:Shotgun_body
+    3300008: shotggun:trigger
+    4300000: shotggun:Reloader
+    4300002: shotggun:Handle
+    4300004: shotggun:trigger
+    4300006: shotggun:R_Hand
+    4300008: shotggun:Shotgun_body
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: duck_bodyMat
-    second: {fileID: 2100000, guid: 1a8317e4ae34cb44689b5d1a47aa9cdb, type: 2}
+      name: 'Material #46'
+    second: {fileID: 2100000, guid: 99efa289d12000a44b7eb9cb22ceefd1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: duck_eyeMat
-    second: {fileID: 2100000, guid: 7d5bf2a3c7ded1f43944e9e843c42a21, type: 2}
+      name: shotggun_ShottyMUV_Material_002
+    second: {fileID: 2100000, guid: c5e843f8f1bccba4f9c70933731ca222, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

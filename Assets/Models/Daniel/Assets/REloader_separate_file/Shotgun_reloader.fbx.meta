@@ -1,35 +1,21 @@
 fileFormatVersion: 2
-guid: 30bfa75657c8d6e44b9171dac6feaf3b
-timeCreated: 1516380738
+guid: 651e17964249e1f498d47bea5a0a2972
+timeCreated: 1516415931
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: object_1
-    100002: object_1_MeshPart0
-    100004: object_1_MeshPart1
-    100006: object_1_MeshPart2
-    100008: //RootNode
-    400000: object_1
-    400002: object_1_MeshPart0
-    400004: object_1_MeshPart1
-    400006: object_1_MeshPart2
-    400008: //RootNode
-    2300000: object_1_MeshPart0
-    2300002: object_1_MeshPart1
-    2300004: object_1_MeshPart2
-    3300000: object_1_MeshPart0
-    3300002: object_1_MeshPart1
-    3300004: object_1_MeshPart2
-    4300000: object_1_MeshPart0
-    4300002: object_1_MeshPart1
-    4300004: object_1_MeshPart2
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: shotggun:Reloader
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: object_1Mat
-    second: {fileID: 2100000, guid: 1fc412e2e55dee84bb6a24e6f7fdd5c9, type: 2}
+      name: shotggun_ShottyMUV_Material_002
+    second: {fileID: 2100000, guid: c5e843f8f1bccba4f9c70933731ca222, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

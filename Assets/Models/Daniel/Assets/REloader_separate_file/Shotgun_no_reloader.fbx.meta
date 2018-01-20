@@ -1,68 +1,43 @@
 fileFormatVersion: 2
-guid: b638100b8d6962b4a986cc6e88117d10
-timeCreated: 1516375960
+guid: 48a32dee392e01d42998d2c93a9f0a93
+timeCreated: 1516415929
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    100004: default_MeshPart0
-    100006: default_MeshPart1
-    100008: default_MeshPart2
-    100010: default_MeshPart3
-    100012: default_MeshPart4
-    100014: default_MeshPart5
-    100016: default_MeshPart6
-    100018: default_MeshPart7
-    100020: default_MeshPart8
-    400000: default
-    400002: //RootNode
-    400004: default_MeshPart0
-    400006: default_MeshPart1
-    400008: default_MeshPart2
-    400010: default_MeshPart3
-    400012: default_MeshPart4
-    400014: default_MeshPart5
-    400016: default_MeshPart6
-    400018: default_MeshPart7
-    400020: default_MeshPart8
-    2300000: default
-    2300002: default_MeshPart0
-    2300004: default_MeshPart1
-    2300006: default_MeshPart2
-    2300008: default_MeshPart3
-    2300010: default_MeshPart4
-    2300012: default_MeshPart5
-    2300014: default_MeshPart6
-    2300016: default_MeshPart7
-    2300018: default_MeshPart8
-    3300000: default
-    3300002: default_MeshPart0
-    3300004: default_MeshPart1
-    3300006: default_MeshPart2
-    3300008: default_MeshPart3
-    3300010: default_MeshPart4
-    3300012: default_MeshPart5
-    3300014: default_MeshPart6
-    3300016: default_MeshPart7
-    3300018: default_MeshPart8
-    4300000: default
-    4300002: default_MeshPart0
-    4300004: default_MeshPart1
-    4300006: default_MeshPart2
-    4300008: default_MeshPart3
-    4300010: default_MeshPart4
-    4300012: default_MeshPart5
-    4300014: default_MeshPart6
-    4300016: default_MeshPart7
-    4300018: default_MeshPart8
+    100000: shotggun:Handle
+    100002: shotggun:R_Hand
+    100004: shotggun:Shotgun_body
+    100006: shotggun:trigger
+    100008: //RootNode
+    400000: shotggun:Handle
+    400002: shotggun:R_Hand
+    400004: shotggun:Shotgun_body
+    400006: shotggun:trigger
+    400008: //RootNode
+    2300000: shotggun:Handle
+    2300002: shotggun:R_Hand
+    2300004: shotggun:Shotgun_body
+    2300006: shotggun:trigger
+    3300000: shotggun:Handle
+    3300002: shotggun:R_Hand
+    3300004: shotggun:Shotgun_body
+    3300006: shotggun:trigger
+    4300000: shotggun:Handle
+    4300002: shotggun:trigger
+    4300004: shotggun:R_Hand
+    4300006: shotggun:Shotgun_body
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: defaultMat
-    second: {fileID: 2100000, guid: a71c13da2d4876a4cb6de36736416182, type: 2}
+      name: 'Material #46'
+    second: {fileID: 2100000, guid: 0ca11129b121d7040bcd46ed1b0d0707, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shotggun_ShottyMUV_Material_002
+    second: {fileID: 2100000, guid: c5e843f8f1bccba4f9c70933731ca222, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
