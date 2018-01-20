@@ -19,6 +19,7 @@ public class ShootScript : MonoBehaviour
     public int noOfBullets;
     public bool reloaded;
     public GameObject duckManager;
+    public GameObject bulletsUI;
 
     // Use this for initialization
     void Start () {
@@ -29,6 +30,7 @@ public class ShootScript : MonoBehaviour
     }
 	// Update is called once per frame
 	void Update () {
+        bulletsUI.GetComponent<TextMesh>().text = noOfBullets.ToString();
         if (controllerRight.GetComponent<GetControllerFunctions>().Controller.GetHairTriggerDown())
         {
             if (noOfBullets > 0 && reloaded)
@@ -42,8 +44,9 @@ public class ShootScript : MonoBehaviour
                 reloader.GetComponent<ReloadScript>().chargedDown = false;
                 reloader.GetComponent<ReloadScript>().chargedUp = false;
             }
-            else if(noOfBullets<=0)
+            else if(noOfBullets == 0)
             {
+                reloaded = false;
                 Debug.Log("No more bullets!");
                 audioSource.clip = emptyGunClip;
                 audioSource.Play();

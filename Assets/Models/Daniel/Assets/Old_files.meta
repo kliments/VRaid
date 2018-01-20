@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Models/Daniel/Assets/Old_files.meta
 guid: 16695c2891cdaf848bd42897ed3eb656
 folderAsset: yes
 timeCreated: 1516415691
+=======
+guid: 5d927d78627c9444480e42a65c2a078a
+folderAsset: yes
+timeCreated: 1516449785
+>>>>>>> d913ab196ef54b0d2dce9f043673c23c55b506f7:Assets/Models/Daniel/Assets/Old_files.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

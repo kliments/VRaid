@@ -16,7 +16,7 @@ public class ReloadScript : MonoBehaviour {
 	void Start () {
         chargedDown = false;
         chargedUp = false;
-		chargerPos = new Vector3(-0.35f, 0.0306f, 0);
+		chargerPos = new Vector3(-0.034f, -0.004f, 0);
         GetComponent<AudioSource>().clip = firstReload;
     }
 	
@@ -28,7 +28,7 @@ public class ReloadScript : MonoBehaviour {
             gameObject.transform.localPosition = chargerPos;
         }
 
-        else if(gameObject.transform.localPosition.x <= -0.35f)
+        else if(gameObject.transform.localPosition.x <= -0.034f)
         {
             gameObject.transform.localPosition = chargerPos;
         }
@@ -37,33 +37,37 @@ public class ReloadScript : MonoBehaviour {
 
     void OnTriggerStay(Collider col)
     {
-        if(col.gameObject.name == "LeftHand")
+        if(shooter.GetComponent<ShootScript>().noOfBullets>0)
         {
-            if(controllerLeft.GetComponent<GetControllerFunctions>().Controller.GetHairTrigger())
+            if(col.gameObject.name == "LeftHand")
             {
-                Debug.Log(gameObject.transform.forward);
-                col.transform.parent = gameObject.transform.parent;
-                tempPos = new Vector3(col.gameObject.transform.localPosition.x, 0.0306f, 0);
-                gameObject.transform.localPosition = tempPos;
-                col.transform.parent = controllerLeft.transform;
+                if(controllerLeft.GetComponent<GetControllerFunctions>().Controller.GetHairTrigger())
+                {
+                    Debug.Log(gameObject.transform.forward);
+                    col.transform.parent = gameObject.transform.parent;
+                    tempPos = new Vector3(col.gameObject.transform.localPosition.x, -0.004f, 0);
+                    gameObject.transform.localPosition = tempPos;
+                    col.transform.parent = controllerLeft.transform;
 
-                if(gameObject.transform.localPosition.x >= -0.26f)
-                {
-                    gameObject.transform.localPosition = new Vector3(-0.26f, 0.0306f, 0);
-                    chargedDown = true;
-                    if (!audioSource.isPlaying)
+                    if(gameObject.transform.localPosition.x >= -0.024f)
                     {
-                        audioSource.clip = firstReload;
-                        audioSource.Play();
-                    }
+                        gameObject.transform.localPosition = new Vector3(-0.024f, -0.004f, 0);
+                        chargedDown = true;
+                        if (!audioSource.isPlaying)
+                        {
+                            audioSource.clip = firstReload;
+                            audioSource.Play();
+                        }
                     
-                }
-                if (gameObject.transform.localPosition.x <= -0.3f && chargedDown)
-                {
-                    gameObject.transform.localPosition = chargerPos;
-                    chargedUp = true;
-                    audioSource.clip = secondReload;
-                    audioSource.Play();
+                    }
+                    if (gameObject.transform.localPosition.x <= -0.034f && chargedDown)
+                    {
+                        gameObject.transform.localPosition = chargerPos;
+                        chargedUp = true;
+                        audioSource.clip = secondReload;
+                        audioSource.Play();
+                    
+                    }
                 }
             }
         }
