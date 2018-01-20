@@ -64,6 +64,7 @@ public class ReloadScript : MonoBehaviour {
                     chargedUp = true;
                     audioSource.clip = secondReload;
                     audioSource.Play();
+                    
                 }
             }
         }
