@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour {
             SceneManager.LoadScene("MainScene2");
         }*/
         
-        if(duckManager.GetComponent<DuckManager>().noOfDucksEscaped == 5)
+        if(duckManager.GetComponent<DuckManager>().noOfDucksEscaped == 3)
         {
             Debug.Log("GAME OVER MOTHERFUCKER!");
         }

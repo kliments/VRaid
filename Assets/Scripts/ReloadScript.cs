@@ -16,7 +16,7 @@ public class ReloadScript : MonoBehaviour {
 	void Start () {
         chargedDown = false;
         chargedUp = false;
-		chargerPos = new Vector3(-0.35f, 0.0306f, 0);
+		chargerPos = new Vector3(-0.034f, -0.004f, 0);
         GetComponent<AudioSource>().clip = firstReload;
     }
 	
@@ -28,7 +28,7 @@ public class ReloadScript : MonoBehaviour {
             gameObject.transform.localPosition = chargerPos;
         }
 
-        else if(gameObject.transform.localPosition.x <= -0.35f)
+        else if(gameObject.transform.localPosition.x <= -0.034f)
         {
             gameObject.transform.localPosition = chargerPos;
         }
@@ -43,13 +43,13 @@ public class ReloadScript : MonoBehaviour {
             {
                 Debug.Log(gameObject.transform.forward);
                 col.transform.parent = gameObject.transform.parent;
-                tempPos = new Vector3(col.gameObject.transform.localPosition.x, 0.0306f, 0);
+                tempPos = new Vector3(col.gameObject.transform.localPosition.x, -0.004f, 0);
                 gameObject.transform.localPosition = tempPos;
                 col.transform.parent = controllerLeft.transform;
 
-                if(gameObject.transform.localPosition.x >= -0.26f)
+                if(gameObject.transform.localPosition.x >= -0.024f)
                 {
-                    gameObject.transform.localPosition = new Vector3(-0.26f, 0.0306f, 0);
+                    gameObject.transform.localPosition = new Vector3(-0.024f, -0.004f, 0);
                     chargedDown = true;
                     if (!audioSource.isPlaying)
                     {
@@ -58,7 +58,7 @@ public class ReloadScript : MonoBehaviour {
                     }
                     
                 }
-                if (gameObject.transform.localPosition.x <= -0.3f && chargedDown)
+                if (gameObject.transform.localPosition.x <= -0.034f && chargedDown)
                 {
                     gameObject.transform.localPosition = chargerPos;
                     chargedUp = true;

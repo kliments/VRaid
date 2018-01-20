@@ -12,11 +12,15 @@ public class DuckManager : MonoBehaviour {
     public int noOfDucksEscaped;
     public int noOfDucksKilled;
     public GameObject bucket;
+    public GameObject ducksKilledUI;
+    public GameObject ducksEscapedUI;
 
     // Use this for initialization
     void Start () {
         duckInstance = null;
         noOfDucksSpawned = 0;
+        noOfDucksEscaped = 0;
+        noOfDucksKilled = 0;
         InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
 
@@ -41,6 +45,7 @@ public class DuckManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+        ducksKilledUI.GetComponent<TextMesh>().text = noOfDucksKilled.ToString();
+        ducksEscapedUI.GetComponent<TextMesh>().text = noOfDucksEscaped.ToString();
 	}
 }

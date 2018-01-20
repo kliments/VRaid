@@ -27,7 +27,7 @@ public class LaserScript : MonoBehaviour {
             {
                 crossHair.SetActive(true);
                 crossHair.transform.position = hit.transform.position;
-                crossHair.transform.localScale = new Vector3(5.0f, 5.0f, 5.0f);
+                crossHair.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             }
         }
     }

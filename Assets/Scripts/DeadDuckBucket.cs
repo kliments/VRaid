@@ -32,6 +32,6 @@ public class DeadDuckBucket : MonoBehaviour {
     void StartAnim()
     {
         anim.GetComponent<ParticleSystem>().Play();
-        Instantiate(deadDuck, anim.transform.position, Quaternion.identity, transform.parent);
+        Instantiate(deadDuck, anim.transform.position, Quaternion.identity, transform);
     }
 }
