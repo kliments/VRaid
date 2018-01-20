@@ -41,6 +41,6 @@ public class LevelManager : MonoBehaviour {
     }
     void Switch3()
     {
-        SceneManager.LoadScene("MainScene4");
+        SceneManager.LoadScene("MainScene3");
     }
 }
