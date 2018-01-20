@@ -7,6 +7,7 @@ public class MoveAlongPath : MonoBehaviour {
     private Vector3 start, con1, con2, end;
     private float bezierTime, timeToEnd;
     private Vector3 startPos, endPos, prevLoc, nextLoc, targetDir, newDir;
+    private Quaternion temp;
 	// Use this for initialization
 	void Start () {
         timeToEnd = 10f;
@@ -28,7 +29,11 @@ public class MoveAlongPath : MonoBehaviour {
             targetDir = nextLoc - prevLoc;
             newDir = Vector3.RotateTowards(transform.forward, targetDir, Time.deltaTime, 0.0F);
             transform.rotation = Quaternion.LookRotation(newDir);
+            /*temp = transform.rotation;
+            temp.y += 180f;
+            transform.rotation = temp;*/
             transform.position = nextLoc;
+            
         }
     }
 
