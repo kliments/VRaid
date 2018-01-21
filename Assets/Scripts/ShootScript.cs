@@ -77,6 +77,8 @@ public class ShootScript : MonoBehaviour
                 Debug.Log("Reload please!");
                 messageUI.GetComponent<TextMesh>().text = "RELOAD";
                 messageUI.GetComponent<TextMesh>().color = Color.red;
+                audioSource.clip = emptyGunClip;
+                audioSource.Play();
             }
         }
     }
