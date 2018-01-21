@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FadeInAndOut : MonoBehaviour {
 
@@ -10,13 +11,21 @@ public class FadeInAndOut : MonoBehaviour {
     private MeshRenderer rend;
     private float opacity;
     private Color col;
+    public GameObject start, quit;
+    private Scene scene;
 	// Use this for initialization
 	void Start () {
+        scene = SceneManager.GetActiveScene();
         fIn = false;
         fOut = true;
         rend = plane.GetComponent<MeshRenderer>();
-        
-	}
+
+        if (scene.name != "StartScene")
+        {
+            start.SetActive(false);
+            quit.SetActive(false);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -29,6 +38,7 @@ public class FadeInAndOut : MonoBehaviour {
         {
             FadeOut();
         }
+
 	}
 
     void FadeIn()

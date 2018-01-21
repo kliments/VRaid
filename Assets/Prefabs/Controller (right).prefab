@@ -258,6 +258,7 @@ MonoBehaviour:
   duckManager: {fileID: 0}
   bulletsUI: {fileID: 0}
   messageUI: {fileID: 0}
+  bulletArrow: {fileID: 0}
 --- !u!198 &198038821796418078
 ParticleSystem:
   m_ObjectHideFlags: 1

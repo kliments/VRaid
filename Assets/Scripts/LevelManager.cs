@@ -32,6 +32,7 @@ public class LevelManager : MonoBehaviour {
         if(duckManager.GetComponent<DuckManager>().noOfDucksEscaped == 3)
         {
             Debug.Log("GAME OVER MOTHERFUCKER!");
+            Invoke("SwitchStart", 2f);
         }
 	}
 
@@ -42,5 +43,9 @@ public class LevelManager : MonoBehaviour {
     void Switch3()
     {
         SceneManager.LoadScene("MainScene3");
+    }
+    void SwitchStart()
+    {
+        SceneManager.LoadScene("StartScene");
     }
 }

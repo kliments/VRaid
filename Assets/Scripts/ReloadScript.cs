@@ -12,8 +12,14 @@ public class ReloadScript : MonoBehaviour {
     public AudioClip firstReload;
     public AudioClip secondReload;
     public AudioSource audioSource;
+    private byte green, blue;
+    private bool goUp, goDown;
 	// Use this for initialization
 	void Start () {
+        goUp = true;
+        goDown = false;
+        green = 0;
+        blue = 0;
         chargedDown = false;
         chargedUp = false;
 		chargerPos = new Vector3(-0.034f, -0.004f, 0);
@@ -22,6 +28,31 @@ public class ReloadScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (shooter.GetComponent<ShootScript>().noOfBullets < 1)
+        {
+            if (goUp)
+            {
+                gameObject.GetComponent<Renderer>().material.color = new Color32(255, green+=5, blue+=5, 255);
+                if (green == 255 || blue == 255)
+                {
+                    goUp = false;
+                    goDown = true;
+                }
+            }
+            else if (goDown)
+            {
+                gameObject.GetComponent<Renderer>().material.color = new Color32(255, green-=5, blue-=5, 255);
+                if (green == 0 || blue == 0)
+                {
+                    goUp = true;
+                    goDown = false;
+                }
+            } 
+        }
+        else
+        {
+            gameObject.GetComponent<Renderer>().material.color = new Color32(255, 255, 255, 255);
+        }
         if(chargedDown && chargedUp)
         {
             shooter.GetComponent<ShootScript>().reloaded = true;
@@ -60,7 +91,7 @@ public class ReloadScript : MonoBehaviour {
                         }
                     
                     }
-                    if (gameObject.transform.localPosition.x <= -0.034f && chargedDown)
+                    if (gameObject.transform.localPosition.x <= -0.030f && chargedDown)
                     {
                         gameObject.transform.localPosition = chargerPos;
                         chargedUp = true;

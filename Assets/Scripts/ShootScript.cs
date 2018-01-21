@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShootScript : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class ShootScript : MonoBehaviour
     public GameObject duckManager;
     public GameObject bulletsUI;
     public GameObject messageUI;
+    public GameObject bulletArrow;
+
 
     // Use this for initialization
     void Start () {
@@ -40,10 +43,12 @@ public class ShootScript : MonoBehaviour
         {
             messageUI.GetComponent<TextMesh>().text = "NO BULLETS";
             messageUI.GetComponent<TextMesh>().color = Color.red;
+            bulletArrow.SetActive(true);
         } else
         {
             messageUI.GetComponent<TextMesh>().text = "RELOAD";
             messageUI.GetComponent<TextMesh>().color = Color.red;
+            bulletArrow.SetActive(false);
         }
         if (controllerRight.GetComponent<GetControllerFunctions>().Controller.GetHairTriggerDown())
         {
@@ -98,6 +103,14 @@ public class ShootScript : MonoBehaviour
                 currentDuck.AddComponent<Rigidbody>();
                 ++duckManager.GetComponent<DuckManager>().noOfDucksKilled;
                 Debug.Log("Ducks killed = " + duckManager.GetComponent<DuckManager>().noOfDucksKilled);
+            }
+
+            else if(hit.transform.gameObject.name == "Start")
+            {
+                SceneManager.LoadScene("MainScene");
+            } else if (hit.transform.gameObject.name == "Quit")
+            {
+                Application.Quit();
             }
         }
     }
