@@ -32,9 +32,15 @@ public class LevelManager : MonoBehaviour {
         if(duckManager.GetComponent<DuckManager>().noOfDucksEscaped == 3)
         {
             Debug.Log("GAME OVER MOTHERFUCKER!");
-            //Invoke("SwitchStart", 2f);
+            Invoke("SwitchStart", 2f);
         }
-	}
+        if (scene.name == "MainScene3" && duckManager.GetComponent<DuckManager>().noOfDucksKilled == 3)
+        {
+            cameraEye.GetComponent<FadeInAndOut>().fIn = true;
+            Debug.Log("change scene");
+            Invoke("SwitchStart", 5f);
+        }
+    }
 
     void Switch2()
     {
