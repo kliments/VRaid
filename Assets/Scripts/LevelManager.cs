@@ -17,13 +17,13 @@ public class LevelManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(scene.name == "MainScene" && duckManager.GetComponent<DuckManager>().noOfDucksKilled == 1)
+		if(scene.name == "MainScene" && duckManager.GetComponent<DuckManager>().noOfDucksKilled == 3)
         {
            cameraEye.GetComponent<FadeInAndOut>().fIn = true;
             Invoke("Switch2", 5f);
         }
         
-        if(scene.name == "MainScene2" && duckManager.GetComponent<DuckManager>().noOfDucksKilled == 1)
+        if(scene.name == "MainScene2" && duckManager.GetComponent<DuckManager>().noOfDucksKilled == 3)
         {
             cameraEye.GetComponent<FadeInAndOut>().fIn = true;
             Debug.Log("change scene");

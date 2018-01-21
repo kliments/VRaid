@@ -20,6 +20,7 @@ public class ShootScript : MonoBehaviour
     public bool reloaded;
     public GameObject duckManager;
     public GameObject bulletsUI;
+    public GameObject messageUI;
 
     // Use this for initialization
     void Start () {
@@ -31,6 +32,19 @@ public class ShootScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
         bulletsUI.GetComponent<TextMesh>().text = noOfBullets.ToString();
+        if (noOfBullets > 0 && reloaded)
+        {
+            messageUI.GetComponent<TextMesh>().text = "READY";
+            messageUI.GetComponent<TextMesh>().color = Color.green;
+        } else if (noOfBullets == 0)
+        {
+            messageUI.GetComponent<TextMesh>().text = "NO BULLETS";
+            messageUI.GetComponent<TextMesh>().color = Color.red;
+        } else
+        {
+            messageUI.GetComponent<TextMesh>().text = "RELOAD";
+            messageUI.GetComponent<TextMesh>().color = Color.red;
+        }
         if (controllerRight.GetComponent<GetControllerFunctions>().Controller.GetHairTriggerDown())
         {
             if (noOfBullets > 0 && reloaded)
@@ -48,12 +62,16 @@ public class ShootScript : MonoBehaviour
             {
                 reloaded = false;
                 Debug.Log("No more bullets!");
+                messageUI.GetComponent<TextMesh>().text = "NO BULLETS";
+                messageUI.GetComponent<TextMesh>().color = Color.red;
                 audioSource.clip = emptyGunClip;
                 audioSource.Play();
             }
             else if(!reloaded)
             {
                 Debug.Log("Reload please!");
+                messageUI.GetComponent<TextMesh>().text = "RELOAD";
+                messageUI.GetComponent<TextMesh>().color = Color.red;
             }
         }
     }
