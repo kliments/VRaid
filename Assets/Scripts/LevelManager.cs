@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour {
         if(duckManager.GetComponent<DuckManager>().noOfDucksEscaped == 3)
         {
             Debug.Log("GAME OVER MOTHERFUCKER!");
-            Invoke("SwitchStart", 2f);
+            //Invoke("SwitchStart", 2f);
         }
 	}
 
