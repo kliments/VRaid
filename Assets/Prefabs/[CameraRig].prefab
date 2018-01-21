@@ -1950,7 +1950,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2539,7 +2539,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1345889532
+  randomSeed: 1945277016
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5838,7 +5838,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1203614008
+  randomSeed: -544038741
   InitialModule:
     serializedVersion: 3
     enabled: 1
