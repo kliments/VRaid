@@ -20,11 +20,11 @@ public class FadeInAndOut : MonoBehaviour {
         fOut = true;
         rend = plane.GetComponent<MeshRenderer>();
 
-        if (scene.name != "StartScene")
+        /*if (scene.name != "StartScene")
         {
             start.SetActive(false);
             quit.SetActive(false);
-        }
+        }*/
     }
 	
 	// Update is called once per frame

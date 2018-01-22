@@ -29,7 +29,7 @@ public class ShootScript : MonoBehaviour
     void Start () {
         partSys1 = fireAnim1.GetComponent<ParticleSystem>();
         partSys2 = fireAnim2.GetComponent<ParticleSystem>();
-        reloaded = false;
+        reloaded = true;
         noOfBullets = 5;
     }
 	// Update is called once per frame
