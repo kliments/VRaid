@@ -34,20 +34,20 @@ public class ShootScript : MonoBehaviour
     }
 	// Update is called once per frame
 	void Update () {
-        bulletsUI.GetComponent<TextMesh>().text = noOfBullets.ToString();
+        bulletsUI.GetComponent<UnityEngine.UI.Text>().text = "Bullets: " + noOfBullets.ToString();
         if (noOfBullets > 0 && reloaded)
         {
-            messageUI.GetComponent<TextMesh>().text = "READY";
-            messageUI.GetComponent<TextMesh>().color = Color.green;
+            messageUI.GetComponent<UnityEngine.UI.Text>().text = "READY";
+            messageUI.GetComponent<UnityEngine.UI.Text>().color = Color.green;
         } else if (noOfBullets == 0)
         {
-            messageUI.GetComponent<TextMesh>().text = "NO BULLETS";
-            messageUI.GetComponent<TextMesh>().color = Color.red;
+            messageUI.GetComponent<UnityEngine.UI.Text>().text = "NO BULLETS";
+            messageUI.GetComponent<UnityEngine.UI.Text>().color = Color.red;
             bulletArrow.SetActive(true);
         } else
         {
-            messageUI.GetComponent<TextMesh>().text = "RELOAD";
-            messageUI.GetComponent<TextMesh>().color = Color.red;
+            messageUI.GetComponent<UnityEngine.UI.Text>().text = "RELOAD";
+            messageUI.GetComponent<UnityEngine.UI.Text>().color = Color.red;
             bulletArrow.SetActive(false);
         }
         if (controllerRight.GetComponent<GetControllerFunctions>().Controller.GetHairTriggerDown())
@@ -67,16 +67,16 @@ public class ShootScript : MonoBehaviour
             {
                 reloaded = false;
                 Debug.Log("No more bullets!");
-                messageUI.GetComponent<TextMesh>().text = "NO BULLETS";
-                messageUI.GetComponent<TextMesh>().color = Color.red;
+                messageUI.GetComponent<UnityEngine.UI.Text>().text = "NO BULLETS";
+                messageUI.GetComponent<UnityEngine.UI.Text>().color = Color.red;
                 audioSource.clip = emptyGunClip;
                 audioSource.Play();
             }
             else if(!reloaded)
             {
                 Debug.Log("Reload please!");
-                messageUI.GetComponent<TextMesh>().text = "RELOAD";
-                messageUI.GetComponent<TextMesh>().color = Color.red;
+                messageUI.GetComponent<UnityEngine.UI.Text>().text = "RELOAD";
+                messageUI.GetComponent<UnityEngine.UI.Text>().color = Color.red;
                 audioSource.clip = emptyGunClip;
                 audioSource.Play();
             }
