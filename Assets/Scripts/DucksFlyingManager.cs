@@ -18,6 +18,7 @@ public class DucksFlyingManager : MonoBehaviour {
 
         //Call Destroy function after 10 seconds
         Invoke("DuckDestroyer", 10);
+        Invoke("spawnSound", 5);
         spawnSound();
     }
     

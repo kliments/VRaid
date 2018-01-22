@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174073427b377a44b8963eebf8950660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duck: {fileID: 1038457529763866, guid: 32026357c04e0e944835774b42e3c1b7, type: 2}
+  duck: {fileID: 1788517788013094, guid: 49b7577dd4954ea43a65b337275c3dbe, type: 2}
   spawnTime: 3
   spawnPoints:
   - {fileID: 0}
@@ -73,3 +73,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   noOfDucksSpawned: 0
+  noOfDucksEscaped: 0
+  noOfDucksKilled: 0
+  bucket: {fileID: 0}
+  ducksKilledUI: {fileID: 0}
+  ducksEscapedUI: {fileID: 0}
+  dog: {fileID: 0}
+  oneBark: {fileID: 8300000, guid: 0fa40c683e7318f4e8b5b772a93375fa, type: 3}
+  twoBark: {fileID: 8300000, guid: 55253cbda29e33b43997faf79cf35470, type: 3}

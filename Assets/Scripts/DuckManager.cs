@@ -60,6 +60,7 @@ public class DuckManager : MonoBehaviour {
         bucket.GetComponent<DeadDuckBucket>().tempDuck = true;
     }
 
+
     void DogBark1()
     {
         dog.GetComponent<AudioSource>().clip = oneBark;
