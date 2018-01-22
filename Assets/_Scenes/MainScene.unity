@@ -1836,11 +1836,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &356711347 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1606164919807310, guid: 9d95132dfe31836479341a882d467227,
-    type: 2}
-  m_PrefabInternal: {fileID: 1969852066}
 --- !u!1 &372660408
 GameObject:
   m_ObjectHideFlags: 0
@@ -7239,11 +7234,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1694422059}
   m_Mesh: {fileID: 4300000, guid: 4c6b6d3516769584fb402fff34f16e86, type: 3}
---- !u!1 &1727122156 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1484481447133428, guid: 9d95132dfe31836479341a882d467227,
-    type: 2}
-  m_PrefabInternal: {fileID: 1969852066}
 --- !u!4 &1746607872 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4608945041579860, guid: 186c5debd4da53a4d8cb0c38fb38a15a,
@@ -8427,12 +8417,12 @@ Prefab:
         type: 2}
       propertyPath: ducksKilledUI
       value: 
-      objectReference: {fileID: 356711347}
+      objectReference: {fileID: 631952853}
     - target: {fileID: 114767140586400882, guid: 3402480a004182d41846f5b9bc46f702,
         type: 2}
       propertyPath: ducksEscapedUI
       value: 
-      objectReference: {fileID: 1727122156}
+      objectReference: {fileID: 2134869374}
     - target: {fileID: 114767140586400882, guid: 3402480a004182d41846f5b9bc46f702,
         type: 2}
       propertyPath: duck

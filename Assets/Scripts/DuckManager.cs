@@ -45,7 +45,7 @@ public class DuckManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        ducksKilledUI.GetComponent<TextMesh>().text = noOfDucksKilled.ToString();
-        ducksEscapedUI.GetComponent<TextMesh>().text = noOfDucksEscaped.ToString();
+        ducksKilledUI.GetComponent<UnityEngine.UI.Text>().text = "Ducks Killed: " + noOfDucksKilled.ToString();
+        ducksEscapedUI.GetComponent<UnityEngine.UI.Text>().text = "Ducks Escaped: " + noOfDucksEscaped.ToString();
 	}
 }
